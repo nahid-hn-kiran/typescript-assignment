@@ -66,3 +66,32 @@ const printBookDetails = (book: Book): void => {
     }, Available: ${book.isAvailable ? "Yes" : "No"}`
   );
 };
+
+const getUniqueValues = (
+  arr1: (number | string)[],
+  arr2: (number | string)[]
+): (number | string)[] => {
+  const resultList: (number | string)[] = [];
+
+  const addIfNotExist = (list: (number | string)[]) => {
+    for (const item of list) {
+      let isDuplicate = false;
+
+      for (const existingItem of resultList) {
+        if (item === existingItem) {
+          isDuplicate = true;
+          break;
+        }
+      }
+
+      if (!isDuplicate) {
+        resultList.push(item);
+      }
+    }
+  };
+
+  addIfNotExist(arr1);
+  addIfNotExist(arr2);
+
+  return resultList;
+};
