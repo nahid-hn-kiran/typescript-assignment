@@ -40,3 +40,14 @@ type RatedItem = {
 const filterByRating = (items: RatedItem[]): RatedItem[] => {
   return items.filter((item) => item.rating >= 4);
 };
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+
+const filterActiveUsers = (users: User[]): User[] => {
+  return users.filter((user) => user.isActive);
+};
