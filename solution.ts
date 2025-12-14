@@ -9,3 +9,11 @@ const formatValue = (
     return !value;
   }
 };
+
+const getLength = (value: string | any[]): number => {
+  if (Array.isArray(value)) {
+    return value.length;
+  } else {
+    return value.length;
+  }
+};
